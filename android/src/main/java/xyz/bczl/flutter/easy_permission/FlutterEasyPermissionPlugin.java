@@ -20,7 +20,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -38,11 +37,6 @@ public class FlutterEasyPermissionPlugin implements FlutterPlugin,
     private Activity mActivity;
 
     private MethodChannel mCallbackChannel;
-
-    public static void registerWith(Registrar registrar) {
-        final FlutterEasyPermissionPlugin instance = new FlutterEasyPermissionPlugin();
-        instance.onAttachedToEngine(registrar.context(), registrar.messenger());
-    }
 
     private void onAttachedToEngine(Context context, BinaryMessenger messenger) {
         mContext = context;
